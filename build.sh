@@ -30,13 +30,13 @@ rpm-ostree install git-lfs git-crypt libgit2
 #   mv ${REPO}.bak ${REPO}
 # done
 
-flatpak uninstall -y --system org.fedoraproject.MediaWriter
-flatpak uninstall -y --system org.gnome.Calendar
-flatpak uninstall -y --system org.gnome.Contacts
-flatpak uninstall -y --system org.mozilla.Thunderbird
-flatpak uninstall -y --system org.mozilla.Firefox
+# flatpak uninstall -y --system org.fedoraproject.MediaWriter
+# flatpak uninstall -y --system org.gnome.Calendar
+# flatpak uninstall -y --system org.gnome.Contacts
+# flatpak uninstall -y --system org.mozilla.Thunderbird
+# flatpak uninstall -y --system org.mozilla.Firefox
 
-flatpak uninstall --unused -y
+# flatpak uninstall --unused -y
 
 /tmp/install-1password.sh
 /tmp/install-firefox.sh
