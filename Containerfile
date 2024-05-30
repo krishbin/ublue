@@ -45,11 +45,11 @@ ARG SOURCE_TAG="40"
 FROM ghcr.io/ublue-os/${SOURCE_IMAGE}${SOURCE_SUFFIX}:${SOURCE_TAG}
 
 
-# COPY --from=ghcr.io/ublue-os/akmods:main-40 /rpms/kmods/*xpad*.rpm /tmp/akmods-rpms/
-# COPY --from=ghcr.io/ublue-os/akmods:main-40 /rpms/kmods/*xone*.rpm /tmp/akmods-rpms/
-# COPY --from=ghcr.io/ublue-os/akmods:main-40 /rpms/kmods/*openrazer*.rpm /tmp/akmods-rpms/
-# COPY --from=ghcr.io/ublue-os/akmods:main-40 /rpms/kmods/*v4l2loopback*.rpm /tmp/akmods-rpms/
-# COPY --from=ghcr.io/ublue-os/akmods-extra:main-40 /rpms/kmods/*ryzen-smu*.rpm /tmp/akmods-rpms/
+COPY --from=ghcr.io/ublue-os/akmods:main-40 /rpms/ /tmp/akmods-rpms/
+
+RUN find /tmp/rpms
+RUN rpm-ostree install /tmp/rpms/ublue-os/ublue-os-akmods*.rpm
+RUN rpm-ostree install /tmp/rpms/kmods/kmod-v4l2loopback*.rpm
 
 ### 3. MODIFICATIONS
 ## make modifications desired in your image and install packages by modifying the build.sh script
