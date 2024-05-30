@@ -15,7 +15,7 @@
 # - "base"
 #
 #  "aurora", "bazzite", "bluefin" or "ucore" may also be used but have different suffixes.
-ARG FEDORA_MAJOR_VERSION=40
+ARG FEDORA_MAJOR_VERSION="40"
 ARG SOURCE_IMAGE="bluefin"
 
 ## SOURCE_SUFFIX arg should include a hyphen and the appropriate suffix name
@@ -49,7 +49,7 @@ COPY --from=ghcr.io/ublue-os/akmods:main-${FEDORA_MAJOR_VERSION} /rpms/kmods/*xp
 COPY --from=ghcr.io/ublue-os/akmods:main-${FEDORA_MAJOR_VERSION} /rpms/kmods/*xone*.rpm /tmp/akmods-rpms/
 COPY --from=ghcr.io/ublue-os/akmods:main-${FEDORA_MAJOR_VERSION} /rpms/kmods/*openrazer*.rpm /tmp/akmods-rpms/
 COPY --from=ghcr.io/ublue-os/akmods:main-${FEDORA_MAJOR_VERSION} /rpms/kmods/*v4l2loopback*.rpm /tmp/akmods-rpms/
-COPY --from=ghcr.io/ublue-os/akmods:main-${FEDORA_MAJOR_VERSION} /rpms/kmods/*ryzen-smu*.rpm /tmp/akmods-rpms/
+COPY --from=ghcr.io/ublue-os/akmods-extra:main-${FEDORA_MAJOR_VERSION} /rpms/kmods/*ryzen-smu*.rpm /tmp/akmods-rpms/
 
 ### 3. MODIFICATIONS
 ## make modifications desired in your image and install packages by modifying the build.sh script
