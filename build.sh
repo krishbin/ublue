@@ -17,8 +17,7 @@ RELEASE="$(rpm -E %fedora)"
 
 # this would install a package from rpmfusion
 # rpm-ostree install vlc
-rpm-ostree install git-lfs gitcrypt
-
+rpm-ostree install git-lfs git-crypt libgit2
 
 for REPO in $(rpm -ql ublue-os-akmods-addons|grep ^"/etc"|grep repo$); do
   echo "akmods: enable default entry: ${REPO}"
