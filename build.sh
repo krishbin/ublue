@@ -18,7 +18,7 @@ RELEASE="$(rpm -E %fedora)"
 # this would install a package from rpmfusion
 # rpm-ostree install vlc
 rpm-ostree install git-lfs git-crypt libgit2
-rpm-ostree install kmod-openrazer kmod-xpadneo kmod-v4l2loopback kmod-xone 
+# rpm-ostree install kmod-openrazer kmod-xpadneo kmod-v4l2loopback kmod-xone 
 
 # for REPO in $(rpm -ql ublue-os-akmods-addons|grep ^"/etc"|grep repo$); do
 #   echo "akmods: enable default entry: ${REPO}"
