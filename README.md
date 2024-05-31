@@ -1,4 +1,4 @@
-# image-template
+# Krishbin Custom Ublue Image
 
 # Purpose
 
