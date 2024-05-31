@@ -37,7 +37,7 @@ ARG SOURCE_IMAGE="bluefin"
 ARG SOURCE_SUFFIX="-dx-nvidia"
 
 ## SOURCE_TAG arg must be a version built for the specific image: eg, 39, 40, gts, latest
-ARG SOURCE_TAG="40"
+ARG SOURCE_TAG="latest"
 
 
 ### 2. SOURCE IMAGE
@@ -48,8 +48,8 @@ FROM ghcr.io/ublue-os/${SOURCE_IMAGE}${SOURCE_SUFFIX}:${SOURCE_TAG}
 COPY --from=ghcr.io/ublue-os/akmods:main-40 /rpms/ /tmp/akmods-rpms/
 
 RUN find /tmp/akmods-rpms
-# RUN rpm-ostree install /tmp/akmods-rpms/ublue-os/ublue-os-akmods*.rpm
-# RUN rpm-ostree install /tmp/akmods-rpms/kmods/kmod-v4l2loopback*.rpm
+RUN rpm-ostree install /tmp/akmods-rpms/ublue-os/ublue-os-akmods*.rpm
+RUN rpm-ostree install /tmp/akmods-rpms/kmods/kmod-v4l2loopback*.rpm
 
 ### 3. MODIFICATIONS
 ## make modifications desired in your image and install packages by modifying the build.sh script
