@@ -8,7 +8,7 @@ ARG SOURCE_TAG="latest"
 FROM ghcr.io/ublue-os/${SOURCE_IMAGE}${SOURCE_SUFFIX}:${SOURCE_TAG}
 
 COPY --from=ghcr.io/ublue-os/akmods:main-40 /rpms/ /tmp/akmods-rpms/
-COPY --from=ghcr.io/ublue-os/akmods:extra-40 /rpms/ /tmp/akmods-rpms/
+COPY --from=ghcr.io/ublue-os/akmods-extra:main-40 /rpms/ /tmp/akmods-rpms/
 
 RUN find /tmp/akmods-rpms
 RUN sed -i 's@enabled=0@enabled=1@g' /etc/yum.repos.d/_copr_ublue-os-akmods.repo && \
