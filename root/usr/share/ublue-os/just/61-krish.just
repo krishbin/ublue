@@ -6,9 +6,8 @@ configure-dots:
     echo 'Configuring Dots ...'
     git clone --bare git@github.com:krishbin/linuxconfig.git $HOME/.cfg
     alias config="git --work-tree=$HOME --git-dir=$HOME/cfg"
-    if [ -f $HOME/.zshrc ];do
-        mv $HOME/.zshrc $HOME/.zshrcbak
-        done
+    if [ -f $HOME/.zshrc ];then
+    mv $HOME/.zshrc $HOME/.zshrcbak
     fi
     config checkout
     config submodule init
@@ -25,10 +24,10 @@ distrobox-zephyr:
 install-jlink-suite:
     echo 'Installing Jlink Tools ...'
     curl -X POST \
-        -F "accept_license_agreement=accepted" \
-        -F "submit=Download software" \
-        -o /tmp/JLink_Linux_V"${JLINK_VERSION}"_x86_64.tgz \
-        https://www.segger.com/downloads/jlink/JLink_Linux_V"${JLINK_VERSION}"_x86_64.tgz
+    -F "accept_license_agreement=accepted" \
+    -F "submit=Download software" \
+    -o /tmp/JLink_Linux_V"${JLINK_VERSION}"_x86_64.tgz \
+    https://www.segger.com/downloads/jlink/JLink_Linux_V"${JLINK_VERSION}"_x86_64.tgz
     tar -xvf "/tmp/JLink_Linux_V${JLINK_VERSION}_x86_64.tgz" -C $XDG_DATA_HOME
     mv $XDG_DATA_HOME/JLink_Linux_V${JLINK_VERSION}_x86_64 $XDG_DATA_HOME/jlink
     
