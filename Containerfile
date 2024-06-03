@@ -10,8 +10,17 @@ FROM ghcr.io/ublue-os/${SOURCE_IMAGE}${SOURCE_SUFFIX}:${SOURCE_TAG}
 COPY --from=ghcr.io/ublue-os/akmods:main-40 /rpms/ /tmp/akmods-rpms/
 
 RUN find /tmp/akmods-rpms
-RUN rpm-ostree install /tmp/akmods-rpms/ublue-os/ublue-os-akmods*.rpm
-RUN rpm-ostree install /tmp/akmods-rpms/kmods/kmod-v4l2loopback*.rpm
+RUN sed -i 's@enabled=0@enabled=1@g' /etc/yum.repos.d/_copr_ublue-os-akmods.repo && \
+    curl -Lo /etc/yum.repos.d/negativo17-fedora-multimedia.repo https://negativo17.org/repos/fedora-multimedia.repo && \
+    rpm-ostree install \
+        /tmp/akmods-rpms/kmods/*xone*.rpm \
+        /tmp/akmods-rpms/kmods/*openrazer*.rpm \
+        /tmp/akmods-rpms/kmods/*v4l2loopback*.rpm \
+        /tmp/akmods-rpms/kmods/*gcadapter_oc*.rpm \
+        /tmp/akmods-rpms/kmods/*evdi*.rpm \
+        /tmp/akmods-rpms/kmods/*vhba*.rpm \
+        /tmp/akmods-rpms/kmods/*ryzen-smu*.rpm && \
+    sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/negativo17-fedora-multimedia.repo
 
 COPY cosign.pub /usr/share/ublue-os/cosign.pub
 
