@@ -46,3 +46,5 @@ curl -Lo /etc/yum.repos.d/_copr_kylegospo-obs-vkcapture.repo https://copr.fedora
 rpm-ostree install obs-vkcapture
 
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_kylegospo-obs-vkcapture.repo
+
+echo 'import "/usr/share/ublue-os/just/61-krish.just"' >> /usr/share/ublue-os/justfile
