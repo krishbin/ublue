@@ -193,4 +193,10 @@ _path_prepend "$HOME/.yarn/bin"
 # z
 export _Z_DATA="$XDG_DATA_HOME/z"
 
+export ANDROID_SDK_HOME="$XDG_DATA_HOME/android-sdk"
+_path_prepend "$ANDROID_SDK_HOME/SDK/platform-tools"
+
+export FLUTTER_HOME="$XDG_DATA_HOME/flutter"
+_path_prepend "$FLUTTER_HOME/bin"
+
 unset -f _path_prepend
