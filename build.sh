@@ -37,14 +37,11 @@ sed -i "s ghcr.io/ublue-os ghcr.io/krishbin g" /usr/etc/containers/registries.d/
 rm -rf /usr/share/applications/nvim.desktop /usr/share/applications/remote-viewer.desktop /usr/share/applications/input-remapper-gtk.desktop
 
 curl -Lo /etc/yum.repos.d/hardware:razer.repo https://download.opensuse.org/repositories/hardware:/razer/Fedora_$(rpm -E %fedora)/hardware:razer.repo && \
-rpm-ostree install openrazer-meta
-
-sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/hardware:razer.repo
-
 curl -Lo /etc/yum.repos.d/_copr_kylegospo-obs-vkcapture.repo https://copr.fedorainfracloud.org/coprs/kylegospo/obs-vkcapture/repo/fedora-"${RELEASE}"/kylegospo-obs-vkcapture-fedora-"${RELEASE}".repo?arch=x86_64
 
-rpm-ostree install obs-vkcapture
+rpm-ostree install openrazer-meta obs-vkcapture
 
+sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/hardware:razer.repo
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_kylegospo-obs-vkcapture.repo
 
 echo 'import "/usr/share/ublue-os/just/61-krish.just"' >> /usr/share/ublue-os/justfile
