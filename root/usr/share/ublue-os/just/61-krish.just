@@ -44,7 +44,10 @@ install-apps:
     flatpak install --noninteractive -y com.valvesoftware.Steam
     flatpak install --noninteractive -y com.github.jeromerobert.pdfarranger
     flatpak install --noninteractive -y org.gnome.World.Citations
-    
+
+sign-vmware-kmods:
+    /usr/src/kernels/$(uname -r)/scripts/sign-file sha256 /etc/pki/akmods/private/private_key.priv /etc/pki/akmods/certs/public_key.der /usr/lib/modules/$(uname -r)/extra/vmmon.ko
+    /usr/src/kernels/$(uname -r)/scripts/sign-file sha256 /etc/pki/akmods/private/private_key.priv /etc/pki/akmods/certs/public_key.der /usr/lib/modules/$(uname -r)/extra/vmnet.ko
     
     
     
