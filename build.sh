@@ -46,7 +46,8 @@ sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_kylegospo-obs-vkcapture.
 
 echo 'import "/usr/share/ublue-os/just/61-krish.just"' >> /usr/share/ublue-os/justfile
 
-echo 'Installing vmware modules'
-wget https://github.com/krishbin/vmware_modules/releases/download/17.5.2_6.8/VmWare-kmods-17.5.2-1.fc40.x86_64.rpm -O /tmp/VmWare-kmods-17.5.2-1.fc40.x86_64.rpm
+# echo 'Installing vmware modules'
+# wget https://github.com/krishbin/vmware_modules/releases/download/17.5.2_6.8/VmWare-kmods-17.5.2-1.fc40.x86_64.rpm -O /tmp/VmWare-kmods-17.5.2-1.fc40.x86_64.rpm
 
-rpm-ostree install /tmp/VmWare-kmods-17.5.2-1.fc40.x86_64.rpm
+# rpm-ostree install /tmp/VmWare-kmods-17.5.2-1.fc40.x86_64.rpm
+rpm-ostree install waydroid
