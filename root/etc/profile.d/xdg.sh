@@ -204,4 +204,7 @@ _path_prepend "$JLINK_HOME"
 
 export OZONE_JLINK_HOME="$XDG_DATA_HOME/ozone-jlink"
 
+export RUST_EMBASSY="$XDG_DATA_HOME/embassy"
+_path_prepend "$RUST_EMBASSY"
+
 unset -f _path_prepend
