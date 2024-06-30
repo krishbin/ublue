@@ -9,6 +9,6 @@ curl -X POST \
 -o /tmp/JLink_Linux_V"${JLINK_VERSION}"_x86_64.tgz \
 https://www.segger.com/downloads/jlink/JLink_Linux_V"${JLINK_VERSION}"_x86_64.tgz
 
-tar -xvf "/tmp/JLink_Linux_V${JLINK_VERSION}_x86_64.tgz"
+tar xpvzf "/tmp/JLink_Linux_V${JLINK_VERSION}_x86_64.tgz"
 
-mv $XDG_DATA_HOME/JLink_Linux_V${JLINK_VERSION}_x86_64 /usr/lib/Jlink
+mv /tmp/JLink_Linux_V${JLINK_VERSION}_x86_64 /usr/lib/Jlink
