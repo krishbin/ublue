@@ -2,7 +2,7 @@
 # get Jlink
 
 cd /usr/lib
-
+JLINK_VERSION="7.96q"
 curl -X POST \
 -F "accept_license_agreement=accepted" \
 -F "submit=Download software" \
