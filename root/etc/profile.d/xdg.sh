@@ -199,7 +199,7 @@ _path_prepend "$ANDROID_SDK_HOME/SDK/platform-tools"
 export FLUTTER_HOME="$XDG_DATA_HOME/flutter"
 _path_prepend "$FLUTTER_HOME/bin"
 
-export JLINK_HOME="$XDG_DATA_HOME/jlink"
+export JLINK_HOME="/usr/lib/Jlink"
 _path_prepend "$JLINK_HOME"
 
 export OZONE_JLINK_HOME="$XDG_DATA_HOME/ozone-jlink"
