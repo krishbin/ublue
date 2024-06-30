@@ -1,5 +1,5 @@
 ---
-name: build-ublue-custom-sway
+name: build-ublue-custom-gnome
 on:
   pull_request:
     branches:
