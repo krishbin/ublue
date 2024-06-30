@@ -4,7 +4,7 @@ set -ouex pipefail
 
 RELEASE="$(rpm -E %fedora)"
 
-rpm-ostree install git-lfs git-crypt libgit2 fuse fuse-overlayfs fuse-python neovim
+rpm-ostree install git-lfs git-crypt libgit2 fuse fuse-overlayfs neovim
 
 /tmp/install-1password.sh
 /tmp/install-firefox.sh
