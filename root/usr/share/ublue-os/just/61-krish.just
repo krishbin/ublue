@@ -5,7 +5,7 @@ distrobox-mlbox:
 configure-dots:
     echo 'Configuring Dots ...'
     git clone --bare git@github.com:krishbin/linuxconfig.git $HOME/.cfg
-    alias config="git --work-tree=$HOME --git-dir=$HOME/cfg"
+    alias config="git --work-tree=$HOME --git-dir=$HOME/.cfg"
     if [ -f $HOME/.zshrc ];then
     mv $HOME/.zshrc $HOME/.zshrcbak
     fi
