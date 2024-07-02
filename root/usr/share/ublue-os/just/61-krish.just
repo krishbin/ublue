@@ -23,6 +23,7 @@ distrobox-zephyr:
     
 install-jlink-suite:
     echo 'Installing Jlink Tools ...'
+    JLINK_VERSION="796q"
     curl -X POST \
     -F "accept_license_agreement=accepted" \
     -F "submit=Download software" \
