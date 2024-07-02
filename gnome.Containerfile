@@ -15,6 +15,7 @@ ADD --chmod=0755 scripts/* /tmp/
 
 RUN mkdir -p /var/lib/alternatives && \
     /tmp/build.sh && \
+    /tmp/gnome.sh && \
     ostree container commit
 
 ADD root/ /

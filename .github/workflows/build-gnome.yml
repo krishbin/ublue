@@ -11,6 +11,8 @@ on:
       - main
     paths-ignore:
       - '**/README.md'
+      - 'sway.Containerfile'
+      - 'sway.sh'
   workflow_dispatch:
 
 env:

@@ -11,6 +11,8 @@ on:
       - main
     paths-ignore:
       - '**/README.md'
+      - 'gnome.sh'
+      - 'gnome.Containerfile'
   workflow_dispatch:
 
 env:
